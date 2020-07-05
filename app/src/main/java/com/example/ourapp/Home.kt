@@ -54,8 +54,8 @@ class Home : Fragment(), DataAdapter.dataListener {
             myFriends?.let { adapter?.setData(it) }
         })
         btadd.setOnClickListener {
-            val intent = Intent(activity, NewActivity::class.java)
-            activity?.startActivity(intent)
+            val intent = Intent(getActivity(), NewUpdate::class.java)
+            getActivity()?.startActivity(intent)
         }
     }
 
@@ -103,11 +103,11 @@ class Home : Fragment(), DataAdapter.dataListener {
                 .child(data?.key!!.toString())
                 .removeValue()
                 .addOnSuccessListener {
-                    Toast.makeText(context, "Data Berhasil Dihapus", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Data Berhasil Dihapus", Toast.LENGTH_SHORT).show()
                     viewModel.delete(data)
                 }
         } else {
-            Toast.makeText(context, data!!.key!!.toString(), Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(), data!!.key!!.toString(), Toast.LENGTH_LONG).show()
         }
     }
 

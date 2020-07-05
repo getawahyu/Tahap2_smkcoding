@@ -50,7 +50,7 @@ class Indonesia : Fragment() {
     }
 
     private fun callApiGetListIndonesia() {
-        showLoading(context!!, swipeRefreshLayoutIndonesia)
+        showLoading(requireContext(), swipeRefreshLayoutIndonesia)
 
         val httpClient = httpClient()
         val apiRequest = apiRequestIndo<IndoService>(httpClient)
