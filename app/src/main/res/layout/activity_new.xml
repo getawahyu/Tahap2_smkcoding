@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:hint="Telp"
-        android:inputType="textEmailAddress" />
+        android:inputType="phone" />
 
     <EditText
         android:id="@+id/alamat"
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:hint="Alamat"
-        android:inputType="phone" />
+        android:inputType="text" />
 
     <EditText
         android:id="@+id/riwayat"
@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:hint="Riwayat"
-        android:inputType="textPersonName" />
+        android:inputType="text" />
 
     <Button
         android:id="@+id/simpan"

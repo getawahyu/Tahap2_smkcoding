@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ourapp.Home
 import com.example.ourapp.MyModel
+import com.example.ourapp.NewUpdate
 import com.example.ourapp.R
 import com.example.ourapp.util.tampilToast
 import com.google.firebase.auth.FirebaseAuth
@@ -51,7 +52,7 @@ class DataAdapter (
                         bundle.putString("dataAlamat", list.get(position).alamat)
                         bundle.putString("dataRiwayat", list.get(position).riwayat)
                         bundle.putString("getPrimaryKey", list.get(position).key)
-                        val intent = Intent(view.context, Home::class.java)
+                        val intent = Intent(view.context, NewUpdate::class.java)
                         intent.putExtras(bundle)
                         context.startActivity(intent)
                     }
@@ -60,7 +61,7 @@ class DataAdapter (
                         ref = FirebaseDatabase.getInstance().getReference()
                         val getUserID: String = auth?.getCurrentUser()?.getUid().toString()
                         if (ref != null) {
-                            ref.child("data")
+                            ref.child("Data")
 //                                .child("Teman")
                                 .child(list.get(position)?.key.toString())
                                 .removeValue()

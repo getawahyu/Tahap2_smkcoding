@@ -54,8 +54,8 @@ class NewUpdate : AppCompatActivity() {
                 val temanBaru = MyModel(cekNama!!, cekTelp!!, cekAlamat!!, cekRiwayat!!, "")
 
                 val getUserID: String = auth?.getCurrentUser()?.getUid().toString()
-                val getKey: String = getIntent().getStringExtra("getPrim	aryKey").toString()
-                database!!.child(getUserID).child("Teman")
+                val getKey: String = getIntent().getStringExtra("getPrimaryKey").toString()
+                database!!.child("Data")
                     .child(getKey).setValue(temanBaru)
                     .addOnCompleteListener {
                         Toast.makeText(this, "Data Berhasil Disimpan", Toast.LENGTH_SHORT).show()

@@ -85,10 +85,10 @@ class Indonesia : Fragment() {
 
     private fun tampilListIndonesia(githubUsers: DataIndonesia) {
         listIndonesia.layoutManager = LinearLayoutManager(context)
-        listIndonesia.adapter = IndoAdapter(context!!, githubUsers) {
+        listIndonesia.adapter = IndoAdapter(requireContext(), githubUsers) {
 
             val githubUser = it
-            tampilToast(context!!, githubUser.provinsi)
+            tampilToast(requireContext(), githubUser.provinsi)
         }
     }
 
